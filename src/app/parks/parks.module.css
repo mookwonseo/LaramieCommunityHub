@@ -1,0 +1,43 @@
+.parkGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.parkImage {
+    margin: calc(var(--spacing-md) * -1) calc(var(--spacing-lg) * -1) var(--spacing-md);
+    background: var(--gradient-hero);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.imagePlaceholder {
+    font-size: 4rem;
+    filter: brightness(1.2);
+}
+
+.amenities {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.amenityTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.amenityTag {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+}

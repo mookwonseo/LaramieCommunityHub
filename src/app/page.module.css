@@ -1,0 +1,242 @@
+.hero {
+    background: var(--gradient-hero);
+    color: white;
+    padding: var(--spacing-xxl) 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.heroContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.heroText h1 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.heroSubtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.95;
+}
+
+.heroRating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 1.5rem;
+}
+
+.ratingText {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.heroImage {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.heroImage img {
+    width: 100%;
+    height: auto;
+    transition: transform var(--transition-normal);
+}
+
+.heroImage:hover img {
+    transform: scale(1.05);
+}
+
+.calendarGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    align-items: start;
+}
+
+.calendarPlaceholder {
+    background: var(--color-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-border);
+}
+
+.calendarPlaceholder p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+.calendarDates {
+    list-style: none;
+}
+
+.calendarDates li {
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.calendarDates li:last-child {
+    border-bottom: none;
+}
+
+.dateList {
+    list-style: none;
+}
+
+.dateList li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.lunchLink {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* ── Calendar info panel ── */
+.calendarCol {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ── Calendar card ── */
+.calendarCard {
+    margin-bottom: 6px;
+    padding: 8px 10px !important;
+}
+
+.calendarCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.calendarCardTitle {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+/* ── Badge (color swatch) ── */
+.badge {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.badge_yellow {
+    background: #F5C518;
+}
+
+.badge_green {
+    background: #3CB371;
+}
+
+.badge_purple {
+    background: #8A2BE2;
+}
+
+.badge_red {
+    background: #E53935;
+}
+
+.badge_orange {
+    background: #FF6D00;
+}
+
+.badge_pink {
+    background: #E91E8C;
+}
+
+.badge_blue {
+    background: #1565C0;
+}
+
+.badge_gray {
+    background: #9E9E9E;
+}
+
+/* ── Date list ── */
+.dateItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 0;
+    font-size: 0.72rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    line-height: 1.3;
+}
+
+.dateItem:last-child {
+    border-bottom: none;
+}
+
+.dateRange {
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.dateItemUpcoming {
+    font-weight: 700;
+    color: #E53935;
+}
+
+/* Small dot to mark the next upcoming date */
+.upcomingDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #E53935;
+    flex-shrink: 0;
+}
+
+.quickLinks {
+    background: var(--color-secondary);
+}
+
+.iconPlaceholder {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+@media (max-width: 1024px) {
+    .calendarGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .calendarImage {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContent {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .calendarGrid {
+        grid-template-columns: 1fr;
+    }
+}

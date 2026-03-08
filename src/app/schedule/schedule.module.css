@@ -1,0 +1,131 @@
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.dataControls {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.quickAdd {
+    margin-bottom: var(--spacing-xl);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.input {
+    padding: var(--spacing-sm);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.plannerView {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.dayColumn {
+    background: var(--color-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    min-height: 300px;
+}
+
+.dayColumn h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+}
+
+.programList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.programCard {
+    background: white;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.programCard strong {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.listView {
+    margin-top: var(--spacing-lg);
+}
+
+.programTable {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.programRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm);
+    background: var(--color-secondary);
+    border-radius: var(--radius-sm);
+    gap: var(--spacing-md);
+}
+
+.availableProgram {
+    padding: var(--spacing-sm);
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-secondary);
+    border-radius: var(--radius-sm);
+}
+
+.removeBtn {
+    background: var(--color-accent);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    transition: all var(--transition-fast);
+}
+
+.removeBtn:hover {
+    background: #e55;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .plannerView {
+        grid-template-columns: 1fr;
+    }
+
+    .programRow {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
