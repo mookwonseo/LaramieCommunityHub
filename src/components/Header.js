@@ -13,7 +13,7 @@ export default function Header() {
         { name: 'Schedule', path: '/schedule' },
         { name: 'Parks', path: '/parks' },
         { name: 'Birthday Party', path: '/birthday-party' },
-        { name: 'Upcoming Events', path: '/upcoming-events' },
+        // { name: 'Upcoming Events', path: '/upcoming-events' }, // hidden — uncomment to re-enable
         { name: 'Summer Camps', path: '/summer-camps' },
         { name: 'Contact', path: '/contact' },
     ];

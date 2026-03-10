@@ -1,131 +1,196 @@
-.controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--spacing-lg);
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
+/* ── Hero ── */
+.hero {
+    background: linear-gradient(135deg, #1a3a6b 0%, #2563a8 100%);
+    color: #fff;
+    text-align: center;
+    padding: 56px 24px 40px;
 }
 
-.dataControls {
-    display: flex;
-    gap: var(--spacing-sm);
+.hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
-.quickAdd {
-    margin-bottom: var(--spacing-xl);
-}
-
-.formGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
-}
-
-.input {
-    padding: var(--spacing-sm);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
+.hero p {
     font-size: 1rem;
-    transition: border-color var(--transition-fast);
+    opacity: 0.88;
 }
 
-.input:focus {
-    outline: none;
-    border-color: var(--color-primary);
+/* ── Calendar wrapper ── */
+.calendarWrap {
+    margin: 40px 0 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.09);
+    border: 1px solid #e0e0e0;
 }
 
-.plannerView {
+/* ── Day header row ── */
+.dayHeaders {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    grid-template-columns: repeat(7, 1fr);
+    background: #1a3a6b;
 }
 
-.dayColumn {
-    background: var(--color-secondary);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-md);
-    min-height: 300px;
+.dayHeader {
+    color: #fff;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 10px 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
-.dayColumn h3 {
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-md);
-    font-size: 1.1rem;
+/* ── Week row ── */
+.week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid #e8e8e8;
 }
 
-.programList {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.programCard {
-    background: white;
-    padding: var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
+/* ── Day cell ── */
+.dayCell {
+    min-height: 110px;
+    padding: 6px 6px 8px;
+    border-right: 1px solid #e8e8e8;
+    background: #fff;
+    vertical-align: top;
     position: relative;
-    font-size: 0.9rem;
 }
 
-.programCard strong {
+.dayCell:last-child {
+    border-right: none;
+}
+
+.empty {
+    background: #f7f7f8;
+}
+
+.today {
+    background: #fffde7;
+}
+
+.today .dateNum {
+    background: #1a3a6b;
+    color: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dateNum {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #555;
     display: block;
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: 4px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
 }
 
-.listView {
-    margin-top: var(--spacing-lg);
-}
-
-.programTable {
+/* ── Event pills ── */
+.eventList {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    gap: 3px;
 }
 
-.programRow {
+.eventPill {
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 0.67rem;
+    line-height: 1.35;
+    cursor: default;
+    overflow: hidden;
+}
+
+.evName {
+    display: block;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.evTime {
+    display: block;
+    opacity: 0.75;
+    font-size: 0.62rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Legend ── */
+.legendWrap {
+    margin-bottom: 56px;
+}
+
+.upcomingWrap {
+    margin-bottom: 40px;
+}
+
+.upcomingGrid {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm);
-    background: var(--color-secondary);
-    border-radius: var(--radius-sm);
-    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.availableProgram {
-    padding: var(--spacing-sm);
-    border-left: 3px solid var(--color-primary);
-    background: var(--color-secondary);
-    border-radius: var(--radius-sm);
+.legendTitle {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    border-left: 5px solid #1a3a6b;
+    padding-left: 14px;
 }
 
-.removeBtn {
-    background: var(--color-accent);
-    color: white;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    font-size: 0.85rem;
-    transition: all var(--transition-fast);
+.legendGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
 }
 
-.removeBtn:hover {
-    background: #e55;
-    transform: scale(1.05);
+.legendSection h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
 }
 
-@media (max-width: 768px) {
-    .plannerView {
-        grid-template-columns: 1fr;
+.legendItem {
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.legendItem span {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+    .dayCell {
+        min-height: 72px;
+        padding: 4px 3px;
     }
 
-    .programRow {
-        flex-direction: column;
-        align-items: flex-start;
+    .evTime {
+        display: none;
+    }
+
+    .eventPill {
+        font-size: 0.6rem;
+        padding: 2px 3px;
     }
 }

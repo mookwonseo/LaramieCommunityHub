@@ -117,10 +117,13 @@ description:
 ### Laramie Recreation Center
 phone: (307) 721-5269
 location: 920 Boulder Dr, Laramie, WY 82070
-website: https://www.cityoflaramie.org/1048/Recreation
+website: https://wylaramieweb.myvscloud.com/webtrac/web/search.html?Action=Start&SubAction=&_csrf_token=zd6S0Y0708702D2X233B2O5L5K5Z594V1A00457351016Y4T6M6C1E5G4I6K536Z6U4N505N065N4O586G705P5P5950045M4F5B4P1Y6X606K6G1H5I5X5252065X4F6E&type=AQUA&type=Youth&keyword=&primarycode=&bydayonly=No&display=Detail&module=AR&multiselectlist_value=&arwebsearch_buttonsearch=yes
 description:
-- Full-service rec center with three pools, youth swim lessons (6 mo–12 yrs), sports leagues, and ice skating
-- Swim lessons taught by American Red Cross–certified instructors; private lessons available
+- **Youth Sports:** **MLS GO Soccer** (Grades 1–7), **Little Kickers** soccer (ages 3–7), **Laramie Valley Jackalopes Track & Field** (ages 5–12)
+- **Learn to Skate:** **Snowplow** classes (ages 3–5), **Basic Skate** levels 1–3 (ages 6–16)
+- **Swim Lessons:** **Aqua Tot** (6 mo–3 yrs), **Preschool Aquatics** (ages 3–4), **Learn to Swim** levels 1–6 (ages 5+), private lessons available
+- Programs vary by season; check the website for current registration deadlines
+Registration Date Link: https://cityoflaramie.org/184/Youth-Sports-Leagues-Activities
 
 ### Laramie Swim Club Beavers
 contact:
@@ -130,19 +133,27 @@ description:
 - ~80 competitive swimmers; also offers learn-to-swim for beginners
 
 ### Ice Hockey
-contact:
-website:
+phone: (307) 761-1240
+email: lnaughton.hockey@gmail.com · laramiehockeyclub@live.com
+website: https://laramiehockey.usahockey.com/
 description:
+- Youth ice hockey organization (the Laramie Outlaws) for ages 4–19, sanctioned by USA Hockey
+- Open to all skill levels, including beginners new to hockey; spring league and seasonal registration available
 
-### Fire Baseball
-contact:
-website:
+### Laramie Fire Basketball
+contact: laramiefire@outlook.com
+website: https://www.facebook.com/p/Laramie-Fire-Youth-Basketball-100057039177068/
+start-date: April 1, 2026
 description:
+- Youth basketball program focused on building confidence, character, and athletic skills for all levels
+- Empowering young athletes on and off the court in the Laramie community
 
 ### Taekwondo
-contact:
-website:
+phone: (307) 742-6767
+location: 170 N 2nd Street, Suite C Laramie, WY 82072
+website: http://www.laramiedancecenter.com/taekwondo/
 description:
+- Taekwondo classes held at Laramie Dance Center; Mon & Thu 6:30–8:00 PM, white belt intro class Wed 5:30 PM
 
 ---
 

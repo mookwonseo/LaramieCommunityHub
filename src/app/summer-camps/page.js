@@ -1,49 +1,114 @@
+import fs from 'fs'
+import path from 'path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { summerCamps } from '@/data/content'
+import styles from './summer-camps.module.css'
 
 export const metadata = {
     title: 'Summer Camps | Laramie Community Hub',
-    description: 'Explore summer camp opportunities in Laramie for kids.',
+    description: 'Discover summer camps in and around Laramie for kids of all ages.',
+}
+
+function parseSummerCampsMd(content) {
+    const camps = []
+    const blocks = content.split(/\n---\n/)
+    for (const block of blocks) {
+        const lines = block.trim().split('\n')
+        const nameMatch = lines.find(l => l.startsWith('### '))
+        if (!nameMatch) continue
+        const name = nameMatch.replace('### ', '').trim()
+        const fields = {}
+        const highlights = []
+        let inHighlights = false
+        for (const line of lines) {
+            if (line.startsWith('highlights:')) { inHighlights = true; continue }
+            if (inHighlights && line.startsWith('- ')) {
+                highlights.push(line.replace(/^-\s*/, '').trim())
+                continue
+            }
+            // Stop highlights on any non-bullet line after starting
+            if (inHighlights && !line.startsWith('- ') && line.trim() !== '') inHighlights = false
+            const m = line.match(/^([\w &]+):\s*(.+)/)
+            if (m) fields[m[1].trim().toLowerCase()] = m[2].trim()
+        }
+        camps.push({ name, ...fields, highlights })
+    }
+    return camps
 }
 
 export default function SummerCamps() {
+    const filePath = path.join(process.cwd(), 'public', 'summer-camps.md')
+    const content = fs.readFileSync(filePath, 'utf-8')
+    const camps = parseSummerCampsMd(content)
+
     return (
         <>
             <Header />
-            <main className="section">
-                <div className="container">
-                    <h1 className="text-center mb-xl">Summer Camps</h1>
-                    <p className="text-center text-muted mb-xl" style={{ maxWidth: '700px', margin: '0 auto var(--spacing-xl)' }}>
-                        Keep your kids engaged and learning during summer break with these fantastic camp opportunities!
-                    </p>
+            <main>
+                {/* Hero */}
+                <div className={styles.hero}>
+                    <div className={styles.heroEmoji}>☀️</div>
+                    <h1>Summer Camps 2026</h1>
+                    <p>Find the perfect summer camp in and around Laramie — explore programs for kids of all ages and interests.</p>
+                </div>
 
-                    <div className="grid grid-2">
-                        {summerCamps.map(camp => (
-                            <div key={camp.id} className="card">
-                                <h3>{camp.name}</h3>
-                                <p className="text-muted mb-md">{camp.description}</p>
-                                <div style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    gap: 'var(--spacing-xs)',
-                                    padding: 'var(--spacing-sm) 0',
-                                    borderTop: '1px solid var(--color-border)',
-                                    marginTop: 'var(--spacing-md)'
-                                }}>
-                                    <div><strong>Ages:</strong> {camp.ages}</div>
-                                    <div><strong>Dates:</strong> {camp.dates}</div>
+                <div className="container">
+                    <div className={styles.campGrid}>
+                        {camps.map(camp => (
+                            <div key={camp.name} className={styles.campCard}>
+                                <div className={styles.cardTop}>
+                                    {camp.emoji && <span className={styles.campEmoji}>{camp.emoji}</span>}
+                                    <h2 className={styles.campName}>{camp.name}</h2>
                                 </div>
+
+                                <div className={styles.meta}>
+                                    {camp.dates && (
+                                        <div className={styles.metaRow}>
+                                            <span className={styles.metaIcon}>📅</span>
+                                            <span>{camp.dates}</span>
+                                        </div>
+                                    )}
+                                    {camp.hours && (
+                                        <div className={styles.metaRow}>
+                                            <span className={styles.metaIcon}>🕐</span>
+                                            <span>{camp.hours}</span>
+                                        </div>
+                                    )}
+                                    {camp.location && (
+                                        <div className={styles.metaRow}>
+                                            <span className={styles.metaIcon}>📍</span>
+                                            <a
+                                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(camp.location)}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {camp.location}
+                                            </a>
+                                        </div>
+                                    )}
+                                    {camp.ages && (
+                                        <div className={styles.metaRow}>
+                                            <span className={styles.metaIcon}>👦</span>
+                                            <span>Ages {camp.ages}</span>
+                                        </div>
+                                    )}
+                                </div>
+
+                                {camp.highlights?.length > 0 && (
+                                    <ul className={styles.highlights}>
+                                        {camp.highlights.map((h, i) => (
+                                            <li key={i}>{h}</li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                                {camp.website && (
+                                    <a href={camp.website} target="_blank" rel="noopener noreferrer" className={styles.learnMore}>
+                                        Learn More →
+                                    </a>
+                                )}
                             </div>
                         ))}
-                    </div>
-
-                    <div className="card mt-xl" style={{ background: 'var(--color-secondary)' }}>
-                        <h3>☀️ Summer 2026 Registration</h3>
-                        <p className="text-muted">
-                            Registration for summer camps typically opens in March. Many camps fill up quickly,
-                            so early registration is recommended. Contact individual programs for specific registration dates and pricing.
-                        </p>
                     </div>
                 </div>
             </main>

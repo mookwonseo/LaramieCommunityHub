@@ -6,29 +6,32 @@ import Footer from '@/components/Footer';
 import styles from './contact.module.css';
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
-    const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({ name: '', message: '' });
+    const [status, setStatus] = useState('idle'); // idle | sending | success | error
+    const [errorMsg, setErrorMsg] = useState('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // In a real implementation, this would send to a backend API
-        console.log('Form submitted:', formData);
-        setSubmitted(true);
-        setTimeout(() => {
-            setSubmitted(false);
-            setFormData({ name: '', email: '', message: '' });
-        }, 3000);
-    };
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
+        setStatus('sending');
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+            const data = await res.json();
+            if (data.success) {
+                setStatus('success');
+                setFormData({ name: '', message: '' });
+                setTimeout(() => setStatus('idle'), 4000);
+            } else {
+                setErrorMsg(data.error || 'Something went wrong.')
+                setStatus('error');
+            }
+        } catch {
+            setErrorMsg('Could not connect. Please try again.');
+            setStatus('error');
+        }
     };
 
     return (
@@ -48,10 +51,10 @@ export default function Contact() {
                                 Fill out the form and we'll get back to you as soon as possible.
                             </p>
 
-                            {submitted ? (
+                            {status === 'success' ? (
                                 <div className={styles.successMessage}>
-                                    <h4>✓ Thank you!</h4>
-                                    <p>Your message has been sent successfully.</p>
+                                    <h4>✓ Message sent!</h4>
+                                    <p>Thank you — we'll get back to you shortly.</p>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className={styles.form}>
@@ -62,22 +65,10 @@ export default function Contact() {
                                             id="name"
                                             name="name"
                                             value={formData.name}
-                                            onChange={handleChange}
+                                            onChange={e => setFormData({ ...formData, name: e.target.value })}
                                             required
                                             className={styles.input}
-                                        />
-                                    </div>
-
-                                    <div className={styles.formGroup}>
-                                        <label htmlFor="email">Email *</label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                            className={styles.input}
+                                            placeholder="Your name"
                                         />
                                     </div>
 
@@ -87,15 +78,24 @@ export default function Contact() {
                                             id="message"
                                             name="message"
                                             value={formData.message}
-                                            onChange={handleChange}
+                                            onChange={e => setFormData({ ...formData, message: e.target.value })}
                                             required
                                             rows="6"
                                             className={styles.input}
+                                            placeholder="Write your message here..."
                                         />
                                     </div>
 
-                                    <button type="submit" className="btn btn-primary">
-                                        Send Message
+                                    {status === 'error' && (
+                                        <p className={styles.errorMsg}>⚠️ {errorMsg}</p>
+                                    )}
+
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary"
+                                        disabled={status === 'sending'}
+                                    >
+                                        {status === 'sending' ? 'Sending…' : 'Send Message'}
                                     </button>
                                 </form>
                             )}
@@ -104,23 +104,14 @@ export default function Contact() {
                         <div>
                             <div className="card mb-lg">
                                 <h3>📍 Location</h3>
-                                <p className="text-muted">
-                                    Laramie, Wyoming
-                                </p>
-                            </div>
-
-                            <div className="card mb-lg">
-                                <h3>📧 Email</h3>
-                                <p className="text-muted">
-                                    info@laramiecommunityhub.com
-                                </p>
+                                <p className="text-muted">Laramie, Wyoming</p>
                             </div>
 
                             <div className="card">
-                                <h3>🕒 Hours</h3>
+                                <h3>🕒 Response Time</h3>
                                 <p className="text-muted">
                                     Website available 24/7<br />
-                                    Response time: 1-2 business days
+                                    Response time: 1–2 business days
                                 </p>
                             </div>
                         </div>

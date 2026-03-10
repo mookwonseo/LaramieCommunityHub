@@ -85,7 +85,7 @@ function loadPrograms() {
 
 const SECTION_META = {
     'Afterschool Programs': { icon: '🏫', color: '#1a3a6b' },
-    'Afterschool Enrichment Sports': { icon: '⚽', color: '#2e7d32' },
+    'Afterschool Enrichment Sports': { icon: '/icons/sports-section-icon.png', color: '#2e7d32' },
     'Afterschool Enrichment Music/Dance': { icon: '🎵', color: '#6a1b9a' },
 }
 
@@ -110,7 +110,11 @@ export default function Programs() {
                         <section key={section.name} className={styles.section}>
                             <div className="container">
                                 <div className={styles.sectionHeader} style={{ borderColor: meta.color }}>
-                                    <span className={styles.sectionIcon}>{meta.icon}</span>
+                                    {meta.icon.startsWith('/') ? (
+                                        <img src={meta.icon} alt={section.name} className={styles.sectionIcon} style={{ width: 40, height: 40, objectFit: 'contain' }} />
+                                    ) : (
+                                        <span className={styles.sectionIcon}>{meta.icon}</span>
+                                    )}
                                     <h2 style={{ color: meta.color }}>{section.name}</h2>
                                 </div>
 
@@ -132,7 +136,7 @@ export default function Programs() {
                                                 Array.isArray(prog.fields.description) ? (
                                                     <ul className={styles.descList}>
                                                         {prog.fields.description.map((item, i) => (
-                                                            <li key={i}>{item}</li>
+                                                            <li key={i} dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') }} />
                                                         ))}
                                                     </ul>
                                                 ) : (
@@ -173,17 +177,30 @@ export default function Programs() {
                                                 )}
                                             </div>
 
-                                            {prog.fields.website && (
-                                                <a
-                                                    href={prog.fields.website}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className={styles.learnMore}
-                                                    style={{ background: meta.color }}
-                                                >
-                                                    Learn More →
-                                                </a>
-                                            )}
+                                            <div className={styles.cardLinks}>
+                                                {prog.fields.website && (
+                                                    <a
+                                                        href={prog.fields.website}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={styles.learnMore}
+                                                        style={{ background: meta.color }}
+                                                    >
+                                                        Learn More →
+                                                    </a>
+                                                )}
+                                                {prog.fields['registration-date-link'] && (
+                                                    <a
+                                                        href={prog.fields['registration-date-link']}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={styles.learnMore}
+                                                        style={{ background: '#e65100' }}
+                                                    >
+                                                        Registration Dates →
+                                                    </a>
+                                                )}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>

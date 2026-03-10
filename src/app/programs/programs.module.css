@@ -184,6 +184,13 @@
     opacity: 0.85;
 }
 
+.cardLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
     .programGrid {
