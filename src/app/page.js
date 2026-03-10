@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SchoolCalendar from '@/components/SchoolCalendar'
+import UpdateNote from '@/components/UpdateNote'
 import styles from './page.module.css'
 import fs from 'fs'
 import path from 'path'
@@ -138,6 +139,7 @@ export default function Home() {
         <>
             <Header />
             <main>
+                <UpdateNote />
                 {/* Hero Section */}
                 <section className={styles.hero}>
                     <div className="container">
@@ -238,13 +240,29 @@ export default function Home() {
                                     })}
                             </div>
                         </div>
-                        <div className={styles.lunchLink}>
-                            <a href="https://acsd1.nutrislice.com/menu" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                                View ACSD #1 School Lunch &amp; Breakfast Menu
-                            </a>
-                            <div style={{ marginTop: '6px', fontSize: '0.8rem', color: 'var(--color-text-muted, #666)' }}>
-                                acsd1.nutrislice.com/menu
+
+                    </div>
+                </section>
+
+                {/* School Meal Plan Banner */}
+                <section className={styles.mealBanner}>
+                    <div className="container">
+                        <div className={styles.mealBannerInner}>
+                            <div className={styles.mealBannerText}>
+                                <span className={styles.mealBannerIcon}>🍽️</span>
+                                <div>
+                                    <h2 className={styles.mealBannerTitle}>School Lunch &amp; Breakfast Menu</h2>
+                                    <p className={styles.mealBannerSub}>ACSD #1 daily menus powered by Nutrislice</p>
+                                </div>
                             </div>
+                            <a
+                                href="https://acsd1.nutrislice.com/menu"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.mealBannerBtn}
+                            >
+                                View Menu →
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -264,10 +282,10 @@ export default function Home() {
                                 <h3>Parks</h3>
                                 <p className="text-muted">Discover local parks and playgrounds</p>
                             </a>
-                            <a href="/upcoming-events" className="card text-center">
-                                <div className={styles.iconPlaceholder}>🎉</div>
-                                <h3>Events</h3>
-                                <p className="text-muted">Stay updated on community events</p>
+                            <a href="/birthday-party" className="card text-center">
+                                <div className={styles.iconPlaceholder}>🎂</div>
+                                <h3>Birthday Party</h3>
+                                <p className="text-muted">Plan an unforgettable birthday celebration</p>
                             </a>
                         </div>
                     </div>

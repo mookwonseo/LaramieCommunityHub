@@ -24,7 +24,7 @@ export default function Footer() {
                         <h4>Resources</h4>
                         <ul className={styles.footerLinks}>
                             <li><a href="https://www.acsd1.org" target="_blank" rel="noopener noreferrer">ACSD #1</a></li>
-                            <li><a href="/upcoming-events">Events</a></li>
+                            <li><a href="https://www.visitlaramie.org/events/annual-events-and-festivals/" target="_blank" rel="noopener noreferrer">Events</a></li>
                             <li><a href="/summer-camps">Summer Camps</a></li>
                         </ul>
                     </div>

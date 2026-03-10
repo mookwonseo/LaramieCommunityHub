@@ -13,8 +13,8 @@ export default function Header() {
         { name: 'Schedule', path: '/schedule' },
         { name: 'Parks', path: '/parks' },
         { name: 'Birthday Party', path: '/birthday-party' },
-        // { name: 'Upcoming Events', path: '/upcoming-events' }, // hidden — uncomment to re-enable
         { name: 'Summer Camps', path: '/summer-camps' },
+        { name: 'Forum', path: '/forum' },
         { name: 'Contact', path: '/contact' },
     ];
 
@@ -23,6 +23,7 @@ export default function Header() {
             <div className="container">
                 <div className={styles.headerContent}>
                     <Link href="/" className={styles.logo}>
+                        <img src="/images/logo.png" alt="Laramie Community Hub" className={styles.logoImg} />
                         Laramie Community Hub
                     </Link>
                     <nav className={styles.nav}>

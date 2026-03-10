@@ -83,6 +83,7 @@ description:
 email: admin@laramiesoccer.org
 location: 725 Skyline Rd, Laramie, WY 82070
 website: https://laramiesoccer.org/
+start-date: TBD
 description:
 - Laramie's largest youth sports club (700+ members) with recreational and competitive leagues for ages U5–U19
 - Summer camps and a 3v3 mini league also available
@@ -91,6 +92,7 @@ description:
 email: laramieyouthbaseball@gmail.com
 location: PO Box 1281, Laramie, WY 82073
 website: https://laramieyouthbaseball.com/
+start-date: TBD
 description:
 - Little League–chartered program for ages 4–15 with divisions from Tee Ball to Junior League
 - Includes a Challenger Division for youth with disabilities; season runs April–June
@@ -110,6 +112,11 @@ phone: (307) 751-6968
 email: laramiejiujitsu@gmail.com
 location: 407 S. 21st Street, Laramie, WY
 website: https://www.thirdwayjiujitsu.com/
+schedule-items:
+- Kids BJJ (Ages 7–9) | Mon, Wed | 4:00–5:00 PM | Ages 7–9 | Year-round | Waitlist
+- Kids BJJ (Ages 10–14) | Tue, Thu | 4:00–5:00 PM | Ages 10–14 | Year-round | Waitlist
+- Advanced Kids BJJ | Friday | 4:00–5:00 PM | Ages 7–14 | Year-round |
+- Kickboxing | Mon, Wed, Fri | 6:30–8:00 PM | 7th Grade+ | Year-round |
 description:
 - Brazilian Jiu-Jitsu blended with Wrestling, Judo, and Sambo for ages 6–14
 - Free trial class available; also offers kickboxing for 7th grade and up
@@ -118,6 +125,15 @@ description:
 phone: (307) 721-5269
 location: 920 Boulder Dr, Laramie, WY 82070
 website: https://wylaramieweb.myvscloud.com/webtrac/web/search.html?Action=Start&SubAction=&_csrf_token=zd6S0Y0708702D2X233B2O5L5K5Z594V1A00457351016Y4T6M6C1E5G4I6K536Z6U4N505N065N4O586G705P5P5950045M4F5B4P1Y6X606K6G1H5I5X5252065X4F6E&type=AQUA&type=Youth&keyword=&primarycode=&bydayonly=No&display=Detail&module=AR&multiselectlist_value=&arwebsearch_buttonsearch=yes
+schedule-items:
+- MLS GO Soccer (K–2nd) | Mon, Wed | 4:00–5:00 PM | K–2nd Grade | Apr 13–May 20 | $65
+- MLS GO Soccer (3rd–4th) | Mon, Wed | 4:30–5:30 PM | 3rd–4th Grade | Apr 13–May 20 | $65
+- MLS GO Soccer (5th–7th) | Mon, Wed | 5:30–6:30 PM | 5th–7th Grade | Apr 13–May 20 | $65
+- Little Kickers (Ages 3–4) | Tuesday | 4:30–5:15 PM | Ages 3–4 | Apr 14–May 19 | $50
+- Little Kickers (Ages 4–5) | Tuesday | 5:30–6:15 PM | Ages 4–5 | Apr 14–May 19 | $50
+- Jr. Jackalopes Track (Ages 5–6) | Tue, Thu | 5:00–6:15 PM | Ages 5–6 | Apr 28–Jun 6 | $70
+- Track & Field (Ages 7–12) | Tue, Thu | 5:00–6:15 PM | Ages 7–12 | Apr 28–Jun 6 | $70
+- Swim Lessons (Multiple Levels) | Tue, Thu | Various | Ages 6 mo–13 | Apr 7–Apr 30 | $32–$64
 description:
 - **Youth Sports:** **MLS GO Soccer** (Grades 1–7), **Little Kickers** soccer (ages 3–7), **Laramie Valley Jackalopes Track & Field** (ages 5–12)
 - **Learn to Skate:** **Snowplow** classes (ages 3–5), **Basic Skate** levels 1–3 (ages 6–16)
