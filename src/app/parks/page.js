@@ -1,13 +1,15 @@
-'use client'
-
-import { useState } from 'react'
-import dynamic from 'next/dynamic'
+import fs from 'fs'
+import path from 'path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ParksClient from './ParksClient'
+import ThemeParks from '@/components/ThemeParks'
 import styles from './parks.module.css'
 
-// Load map only on client (no SSR) to avoid Leaflet window errors
-const ParkMap = dynamic(() => import('@/components/ParkMap'), { ssr: false })
+export const metadata = {
+    title: 'Parks & Playgrounds | Laramie Community Hub',
+    description: 'Explore parks and theme parks in Laramie, Cheyenne, and Fort Collins.',
+}
 
 const CITIES = {
     Laramie: {
@@ -56,14 +58,33 @@ const CITIES = {
     },
 }
 
-export default function Parks() {
-    const [activeCity, setActiveCity] = useState('Laramie')
-    const [selectedPark, setSelectedPark] = useState(null)
-    const city = CITIES[activeCity]
+function parseThemeParksMd(content) {
+    const parks = []
+    const blocks = content.split(/\n---\n/)
+    for (const block of blocks) {
+        const lines = block.trim().split('\n')
+        const nameMatch = lines.find(l => l.startsWith('### '))
+        if (!nameMatch) continue
+        const name = nameMatch.replace('### ', '').trim()
+        const fields = {}
+        for (const line of lines) {
+            const m = line.match(/^(\w+[\w\s-]*):\s*(.+)/)
+            if (m) fields[m[1].trim().toLowerCase()] = m[2].trim()
+        }
+        parks.push({ name, ...fields })
+    }
+    return parks
+}
 
-    const handleCityChange = (c) => {
-        setActiveCity(c)
-        setSelectedPark(null)
+export default async function Parks() {
+    const filePath = path.join(process.cwd(), 'public', 'theme-parks.md')
+    let themeParks = []
+    
+    try {
+        const content = fs.readFileSync(filePath, 'utf-8')
+        themeParks = parseThemeParksMd(content)
+    } catch (error) {
+        console.error('Error reading theme-parks.md:', error)
     }
 
     return (
@@ -76,48 +97,10 @@ export default function Parks() {
                     <p>Explore parks in Laramie, Cheyenne, and Fort Collins — click a pin to learn more!</p>
                 </div>
 
+                <ParksClient cities={CITIES} />
+
                 <div className="container">
-                    {/* City Tabs */}
-                    <div className={styles.tabs}>
-                        {Object.keys(CITIES).map(c => (
-                            <button
-                                key={c}
-                                className={`${styles.tab} ${activeCity === c ? styles.tabActive : ''}`}
-                                onClick={() => handleCityChange(c)}
-                            >
-                                {c}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* Map */}
-                    <div className={styles.mapWrap}>
-                        <ParkMap
-                            key={activeCity}
-                            parks={city.parks}
-                            center={city.center}
-                            zoom={city.zoom}
-                            selectedPark={selectedPark}
-                        />
-                    </div>
-
-                    {/* Park Cards */}
-                    <div className={styles.cardGrid}>
-                        {city.parks.map(park => (
-                            <div
-                                key={park.name}
-                                className={`${styles.parkCard} ${selectedPark?.name === park.name ? styles.parkCardActive : ''}`}
-                                onClick={() => setSelectedPark(park)}
-                                style={{ cursor: 'pointer' }}
-                            >
-                                <span className={styles.pin}>📍</span>
-                                <div>
-                                    <strong className={styles.parkName}>{park.name}</strong>
-                                    <p className={styles.parkDesc}>{park.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <ThemeParks parks={themeParks} />
                 </div>
             </main>
             <Footer />

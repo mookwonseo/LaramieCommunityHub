@@ -14,17 +14,23 @@ export default function Contact() {
         e.preventDefault();
         setStatus('sending');
         try {
-            const res = await fetch('/api/contact', {
+            // Using Formspree ID for complete privacy (hides email/name)
+            const res = await fetch('https://formspree.io/f/xdawjyby', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.name,
+                    message: formData.message,
+                    _subject: `New message from ${formData.name} — Laramie Community Hub`
+                }),
             });
-            const data = await res.json();
-            if (data.success) {
+            
+            if (res.ok) {
                 setStatus('success');
                 setFormData({ name: '', message: '' });
-                setTimeout(() => setStatus('idle'), 4000);
+                setTimeout(() => setStatus('idle'), 5000);
             } else {
+                const data = await res.json();
                 setErrorMsg(data.error || 'Something went wrong.')
                 setStatus('error');
             }

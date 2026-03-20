@@ -48,7 +48,13 @@ export default function BirthdayParty() {
                     <div className={styles.venueGrid}>
                         {venues.map(venue => (
                             <div key={venue.name} className={styles.venueCard}>
-                                {venue.emoji && <div className={styles.venueEmoji}>{venue.emoji}</div>}
+                                {venue.logo ? (
+                                    <div className={styles.venueLogoWrapper}>
+                                        <img src={venue.logo} alt={`${venue.name} logo`} className={styles.venueLogo} />
+                                    </div>
+                                ) : (
+                                    venue.emoji && <div className={styles.venueEmoji}>{venue.emoji}</div>
+                                )}
                                 <h2 className={styles.venueName}>{venue.name}</h2>
                                 {venue.description && <p className={styles.venueDesc}>{venue.description}</p>}
 

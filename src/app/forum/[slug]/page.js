@@ -64,19 +64,21 @@ function formatDate(dateStr) {
 export async function generateStaticParams() {
     if (!fs.existsSync(POSTS_DIR)) return []
     return fs.readdirSync(POSTS_DIR)
-        .filter(f => f.endsWith('.md'))
+        .filter(f => f.endsWith('.md') && !f.startsWith('.'))
         .map(f => ({ slug: f.replace(/\.md$/, '') }))
 }
 
 export async function generateMetadata({ params }) {
-    const filePath = path.join(POSTS_DIR, `${params.slug}.md`)
+    const { slug } = await params
+    const filePath = path.join(POSTS_DIR, `${slug}.md`)
     if (!fs.existsSync(filePath)) return {}
     const { meta } = parseFrontmatter(fs.readFileSync(filePath, 'utf-8'))
-    return { title: `${meta.title || params.slug} | Forum | Laramie Community Hub` }
+    return { title: `${meta.title || slug} | Forum | Laramie Community Hub` }
 }
 
-export default function ForumPost({ params }) {
-    const filePath = path.join(POSTS_DIR, `${params.slug}.md`)
+export default async function ForumPost({ params }) {
+    const { slug } = await params
+    const filePath = path.join(POSTS_DIR, `${slug}.md`)
     if (!fs.existsSync(filePath)) notFound()
 
     const content = fs.readFileSync(filePath, 'utf-8')

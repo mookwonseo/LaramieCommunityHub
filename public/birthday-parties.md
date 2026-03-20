@@ -10,6 +10,7 @@ email: info@leapwyo.com
 location: 4037 East Grand Ave STE C, Laramie, WY 82070
 website: https://www.leapwyo.com
 emoji: 🥷
+logo: /logos/LeapLogoBluePus.png
 description: Ninja obstacle-course birthday parties where kids can play, celebrate, and have fun in a high-energy, one-of-a-kind space.
 
 ---

@@ -11,9 +11,11 @@ location: LEAP Ninja Warrior Gym, 4037 Grand Ave Suite C, Laramie, WY
 ages: 4–14
 website: https://www.leapwyo.com
 emoji: 🥷
+image: /logos/Leap_SummerCamp.jpeg
 highlights:
 - Lunch included
 - Early Bird Bonus — register by end of March!
+- Multiple camp options including traditional, mountain, and specialty camps
 
 ---
 
@@ -23,6 +25,7 @@ hours: 7:00 AM – 5:30 PM, Monday–Friday
 location: Laramie Educational Afterschool Facility, 715 Shield St, Laramie, WY
 ages: 4–12
 emoji: 🌿
+image: /logos/leaf.png
 highlights:
 - Breakfast, lunch, and snack included
 - Weekly movie day and curriculum-related field trips to local parks, national forest, and state and university museums

@@ -1,0 +1,140 @@
+.themeParks {
+    margin-top: 56px;
+    padding-top: 56px;
+    border-top: 2px dashed #e2e8f0;
+    margin-bottom: 72px;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sectionEmoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.sectionHeader h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+}
+
+.sectionHeader p {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mapWrap {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    margin-bottom: 32px;
+    height: 400px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f1f5f9;
+    border-left: 4px solid #1b4332;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.cardActive {
+    background: #e8f5e9;
+    box-shadow: 0 4px 16px rgba(45, 106, 79, 0.18);
+    border-left-color: #2d6a4f;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.emoji {
+    font-size: 1.8rem;
+}
+
+.name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.info {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infoRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.icon {
+    font-size: 1.1rem;
+}
+
+.link {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    text-align: center;
+    transition: filter 0.2s;
+}
+
+.link:hover {
+    filter: brightness(1.15);
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 24px;
+    }
+}

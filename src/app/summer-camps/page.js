@@ -56,6 +56,11 @@ export default function SummerCamps() {
                     <div className={styles.campGrid}>
                         {camps.map(camp => (
                             <div key={camp.name} className={styles.campCard}>
+                                {camp.image && (
+                                    <div className={styles.campImageWrapper}>
+                                        <img src={camp.image} alt={camp.name} className={styles.campImage} />
+                                    </div>
+                                )}
                                 <div className={styles.cardTop}>
                                     {camp.emoji && <span className={styles.campEmoji}>{camp.emoji}</span>}
                                     <h2 className={styles.campName}>{camp.name}</h2>

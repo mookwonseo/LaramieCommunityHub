@@ -45,7 +45,7 @@ function getExcerpt(body, maxLen = 180) {
 function loadPosts() {
     if (!fs.existsSync(POSTS_DIR)) return []
     return fs.readdirSync(POSTS_DIR)
-        .filter(f => f.endsWith('.md'))
+        .filter(f => f.endsWith('.md') && !f.startsWith('.'))
         .map(filename => {
             const slug = filename.replace(/\.md$/, '')
             const content = fs.readFileSync(path.join(POSTS_DIR, filename), 'utf-8')
@@ -63,9 +63,10 @@ function formatDate(dateStr) {
 
 const ALL_CATS = ['All', 'Announcements', 'School News', 'Community', 'Resources']
 
-export default function Forum({ searchParams }) {
+export default async function Forum({ searchParams }) {
     const posts = loadPosts()
-    const activeFilter = searchParams?.cat || 'All'
+    const { cat } = await searchParams
+    const activeFilter = cat || 'All'
     const visible = activeFilter === 'All' ? posts : posts.filter(p => p.category === activeFilter)
 
     return (

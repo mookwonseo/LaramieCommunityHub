@@ -3,9 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
+import DonateModal from './DonateModal';
+import { useState } from 'react';
 
 export default function Header() {
     const pathname = usePathname();
+    const [isDonateOpen, setIsDonateOpen] = useState(false);
 
     const navItems = [
         { name: 'Home', path: '/' },
@@ -36,9 +39,17 @@ export default function Header() {
                                 {item.name}
                             </Link>
                         ))}
+                        <button 
+                            onClick={() => setIsDonateOpen(true)}
+                            className={styles.donateBtn}
+                            aria-label="Donate"
+                        >
+                            Donate
+                        </button>
                     </nav>
                 </div>
             </div>
+            <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
         </header>
     );
 }

@@ -64,6 +64,19 @@
     line-height: 1.3;
 }
 
+.venueLogoWrapper {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.venueLogo {
+    max-height: 100%;
+    max-width: 160px;
+    object-fit: contain;
+}
+
 .venueDesc {
     font-size: 0.87rem;
     color: #555;

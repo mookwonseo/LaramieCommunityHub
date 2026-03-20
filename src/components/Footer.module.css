@@ -39,6 +39,31 @@
     color: white;
 }
 
+.supportText {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.donateBtnFooter {
+    display: inline-block;
+    background: #0070ba;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.donateBtnFooter:hover {
+    background: #005ea6;
+}
+
 .footerBottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: var(--spacing-lg);
