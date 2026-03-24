@@ -42,15 +42,17 @@
 
 .nav {
     display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: hidden;
 }
 
 .navLink {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-weight: 500;
     color: var(--color-text);
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--spacing-xs) 8px;
     border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
     white-space: nowrap;

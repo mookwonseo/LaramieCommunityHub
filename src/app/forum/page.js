@@ -3,11 +3,21 @@ import path from 'path'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AdBanner from '@/components/AdBanner'
 import styles from './forum.module.css'
 
 export const metadata = {
-    title: 'Community Forum | Laramie Community Hub',
-    description: 'Laramie school news, education updates, and community announcements.',
+    title: 'Community Forum',
+    description: 'Laramie school news, education updates, and community announcements from the Laramie Community Hub.',
+    openGraph: {
+        title: 'Community Forum | Laramie Community Hub',
+        description: 'Laramie school news, education updates, and community announcements.',
+        url: 'https://laramiecommunityhub.com/forum',
+    },
+    twitter: {
+        title: 'Community Forum | Laramie Community Hub',
+        description: 'Laramie school news, education updates, and community announcements.',
+    },
 }
 
 const POSTS_DIR = path.join(process.cwd(), 'public', 'forum', 'posts')
@@ -79,6 +89,9 @@ export default async function Forum({ searchParams }) {
                 </div>
 
                 <div className="container">
+                    {/* Ad Banner 1 */}
+                    <AdBanner slot="Ad1" />
+
                     {/* Category filter */}
                     <div className={styles.filterBar}>
                         {ALL_CATS.map(cat => (
@@ -116,6 +129,9 @@ export default async function Forum({ searchParams }) {
                             </Link>
                         ))}
                     </div>
+
+                    {/* Ad Banner 2 */}
+                    <AdBanner slot="Ad2" />
                 </div>
             </main>
             <Footer />

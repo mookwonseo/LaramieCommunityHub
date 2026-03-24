@@ -4,11 +4,21 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ParksClient from './ParksClient'
 import ThemeParks from '@/components/ThemeParks'
+import AdBanner from '@/components/AdBanner'
 import styles from './parks.module.css'
 
 export const metadata = {
-    title: 'Parks & Playgrounds | Laramie Community Hub',
-    description: 'Explore parks and theme parks in Laramie, Cheyenne, and Fort Collins.',
+    title: 'Parks & Playgrounds',
+    description: 'Explore parks and playgrounds in Laramie, Cheyenne, and Fort Collins for families and kids.',
+    openGraph: {
+        title: 'Parks & Playgrounds | Laramie Community Hub',
+        description: 'Explore parks and playgrounds in Laramie, Cheyenne, and Fort Collins for families and kids.',
+        url: 'https://laramiecommunityhub.com/parks',
+    },
+    twitter: {
+        title: 'Parks & Playgrounds | Laramie Community Hub',
+        description: 'Explore parks and playgrounds in Laramie, Cheyenne, and Fort Collins for families and kids.',
+    },
 }
 
 const CITIES = {
@@ -99,9 +109,15 @@ export default async function Parks() {
 
                 <ParksClient cities={CITIES} />
 
+                {/* Ad Banner 1 */}
+                <div className="container"><AdBanner slot="Ad1" /></div>
+
                 <div className="container">
                     <ThemeParks parks={themeParks} />
                 </div>
+
+                {/* Ad Banner 2 */}
+                <div className="container"><AdBanner slot="Ad2" /></div>
             </main>
             <Footer />
         </>

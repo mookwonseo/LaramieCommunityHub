@@ -2,9 +2,24 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SchoolCalendar from '@/components/SchoolCalendar'
 import UpdateNote from '@/components/UpdateNote'
+import AdBanner from '@/components/AdBanner'
 import styles from './page.module.css'
 import fs from 'fs'
 import path from 'path'
+
+export const metadata = {
+    title: 'Find Youth Programs & Family Resources in Laramie, WY',
+    description: "Discover Laramie's best afterschool programs, summer camps, parks, and family events — all in one place.",
+    openGraph: {
+        title: 'Laramie Community Hub',
+        description: "Discover Laramie's best afterschool programs, summer camps, parks, and family resources.",
+        url: 'https://laramiecommunityhub.com',
+    },
+    twitter: {
+        title: 'Laramie Community Hub',
+        description: "Discover Laramie's best afterschool programs, summer camps, parks, and family resources.",
+    },
+}
 
 // Category config: color and icon per section heading
 const CATEGORY_CONFIG = {
@@ -164,6 +179,11 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* Ad Banner 1 */}
+                <div className="container">
+                    <AdBanner slot="Ad1" />
+                </div>
+
                 {/* Calendar Section */}
                 <section className="section">
                     <div className="container">
@@ -290,6 +310,10 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+                {/* Ad Banner 2 */}
+                <div className="container">
+                    <AdBanner slot="Ad2" />
+                </div>
             </main>
             <Footer />
         </>

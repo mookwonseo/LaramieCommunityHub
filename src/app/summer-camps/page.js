@@ -2,11 +2,21 @@ import fs from 'fs'
 import path from 'path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AdBanner from '@/components/AdBanner'
 import styles from './summer-camps.module.css'
 
 export const metadata = {
-    title: 'Summer Camps | Laramie Community Hub',
-    description: 'Discover summer camps in and around Laramie for kids of all ages.',
+    title: 'Summer Camps 2026',
+    description: 'Discover summer camps in and around Laramie, Wyoming for kids of all ages and interests.',
+    openGraph: {
+        title: 'Summer Camps 2026 | Laramie Community Hub',
+        description: 'Discover summer camps in and around Laramie, Wyoming for kids of all ages and interests.',
+        url: 'https://laramiecommunityhub.com/summer-camps',
+    },
+    twitter: {
+        title: 'Summer Camps 2026 | Laramie Community Hub',
+        description: 'Discover summer camps in and around Laramie, Wyoming for kids of all ages and interests.',
+    },
 }
 
 function parseSummerCampsMd(content) {
@@ -53,6 +63,8 @@ export default function SummerCamps() {
                 </div>
 
                 <div className="container">
+                    {/* Ad Banner 1 */}
+                    <AdBanner slot="Ad1" />
                     <div className={styles.campGrid}>
                         {camps.map(camp => (
                             <div key={camp.name} className={styles.campCard}>
@@ -115,6 +127,8 @@ export default function SummerCamps() {
                             </div>
                         ))}
                     </div>
+                    {/* Ad Banner 2 */}
+                    <AdBanner slot="Ad2" />
                 </div>
             </main>
             <Footer />

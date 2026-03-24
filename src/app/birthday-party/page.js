@@ -2,11 +2,21 @@ import fs from 'fs'
 import path from 'path'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AdBanner from '@/components/AdBanner'
 import styles from './birthday.module.css'
 
 export const metadata = {
-    title: 'Birthday Party Venues | Laramie Community Hub',
-    description: 'Find the perfect birthday party venue in Laramie for your child.',
+    title: 'Birthday Party Venues',
+    description: 'Find the perfect birthday party venue in Laramie, Wyoming for your child — from inflatables to sports, arts, and more.',
+    openGraph: {
+        title: 'Birthday Party Venues | Laramie Community Hub',
+        description: 'Find the perfect birthday party venue in Laramie, Wyoming for your child.',
+        url: 'https://laramiecommunityhub.com/birthday-party',
+    },
+    twitter: {
+        title: 'Birthday Party Venues | Laramie Community Hub',
+        description: 'Find the perfect birthday party venue in Laramie, Wyoming for your child.',
+    },
 }
 
 function parseBirthdayMd(content) {
@@ -45,6 +55,8 @@ export default function BirthdayParty() {
                 </div>
 
                 <div className="container">
+                    {/* Ad Banner 1 */}
+                    <AdBanner slot="Ad1" />
                     <div className={styles.venueGrid}>
                         {venues.map(venue => (
                             <div key={venue.name} className={styles.venueCard}>
@@ -99,6 +111,8 @@ export default function BirthdayParty() {
                         <span className={styles.tipsEmoji}>💡</span>
                         <p><strong>Planning Tip:</strong> Book venues 4–6 weeks in advance, especially for weekends. Many venues offer package deals that include decorations, food, and activities.</p>
                     </div>
+                    {/* Ad Banner 2 */}
+                    <AdBanner slot="Ad2" />
                 </div>
             </main>
             <Footer />

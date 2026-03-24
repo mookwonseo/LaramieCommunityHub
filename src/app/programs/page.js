@@ -1,12 +1,22 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AdBanner from '@/components/AdBanner'
 import styles from './programs.module.css'
 import fs from 'fs'
 import path from 'path'
 
 export const metadata = {
-    title: 'Programs | Laramie Community Hub',
-    description: 'Explore afterschool programs, youth sports, and music/dance enrichment in Laramie.',
+    title: 'Programs',
+    description: 'Explore afterschool programs, youth sports, and music/dance enrichment in Laramie, Wyoming.',
+    openGraph: {
+        title: 'Programs | Laramie Community Hub',
+        description: 'Explore afterschool programs, youth sports, and music/dance enrichment in Laramie, Wyoming.',
+        url: 'https://laramiecommunityhub.com/programs',
+    },
+    twitter: {
+        title: 'Programs | Laramie Community Hub',
+        description: 'Explore afterschool programs, youth sports, and music/dance enrichment in Laramie, Wyoming.',
+    },
 }
 
 // ── Parser ──────────────────────────────────────────────────────────────────
@@ -103,6 +113,9 @@ export default function Programs() {
                     <h1>Afterschool Programs</h1>
                     <p>Find the perfect program for your child — from academic support to sports, arts, and enrichment.</p>
                 </div>
+
+                {/* Ad Banner 1 */}
+                <div className="container"><AdBanner slot="Ad1" /></div>
 
                 {sections.map(section => {
                     const meta = SECTION_META[section.name] || { icon: '📋', color: '#333' }
@@ -208,6 +221,8 @@ export default function Programs() {
                         </section>
                     )
                 })}
+                {/* Ad Banner 2 */}
+                <div className="container"><AdBanner slot="Ad2" /></div>
             </main>
             <Footer />
         </>

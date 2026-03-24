@@ -1,0 +1,23 @@
+.adWrapper {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin: 24px 0;
+}
+
+/* Dev / fallback placeholder */
+.placeholder {
+    width: 100%;
+    min-height: 90px;
+    background: #f5f5f5;
+    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin: 24px 0;
+    color: #aaa;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
