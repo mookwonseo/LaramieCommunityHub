@@ -115,7 +115,7 @@ export default function Programs() {
                 </div>
 
                 {/* Ad Banner 1 */}
-                <div className="container"><AdBanner slot="Ad1" /></div>
+                <div className="container"><AdBanner slot="9029253338" /></div>
 
                 {sections.map(section => {
                     const meta = SECTION_META[section.name] || { icon: '📋', color: '#333' }
@@ -222,7 +222,7 @@ export default function Programs() {
                     )
                 })}
                 {/* Ad Banner 2 */}
-                <div className="container"><AdBanner slot="Ad2" /></div>
+                <div className="container"><AdBanner slot="5002378411" /></div>
             </main>
             <Footer />
         </>

@@ -26,24 +26,38 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className="container">
-                <div className={styles.headerContent}>
+                <div className={styles.topBar}>
                     <Link href="/" className={styles.logo} onClick={closeMenu}>
                         <img src="/images/logo.png" alt="Laramie Community Hub" className={styles.logoImg} />
                         <span className={styles.logoText}>Laramie Community Hub</span>
                     </Link>
 
-                    <button 
-                        className={styles.hamburger} 
-                        onClick={toggleMenu}
-                        aria-label="Toggle Menu"
-                        aria-expanded={isMenuOpen}
-                    >
-                        <span className={`${styles.bar} ${isMenuOpen ? styles.bar1 : ''}`}></span>
-                        <span className={`${styles.bar} ${isMenuOpen ? styles.bar2 : ''}`}></span>
-                        <span className={`${styles.bar} ${isMenuOpen ? styles.bar3 : ''}`}></span>
-                    </button>
+                    <div className={styles.actions}>
+                        <a 
+                            href="https://paypal.me/mookwonseo"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.donateBtn}
+                            onClick={closeMenu}
+                        >
+                            Donate
+                        </a>
 
-                    <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
+                        <button 
+                            className={styles.hamburger} 
+                            onClick={toggleMenu}
+                            aria-label="Toggle Menu"
+                            aria-expanded={isMenuOpen}
+                        >
+                            <span className={`${styles.bar} ${isMenuOpen ? styles.bar1 : ''}`}></span>
+                            <span className={`${styles.bar} ${isMenuOpen ? styles.bar2 : ''}`}></span>
+                            <span className={`${styles.bar} ${isMenuOpen ? styles.bar3 : ''}`}></span>
+                        </button>
+                    </div>
+                </div>
+
+                <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
+                    <div className={styles.navInner}>
                         {navItems.map((item) => (
                             <Link
                                 key={item.path}
@@ -54,19 +68,8 @@ export default function Header() {
                                 {item.name}
                             </Link>
                         ))}
-                    </nav>
-
-                    <a 
-                        href="https://paypal.me/mookwonseo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.donateBtn}
-                        aria-label="Donate"
-                        onClick={closeMenu}
-                    >
-                        Donate
-                    </a>
-                </div>
+                    </div>
+                </nav>
             </div>
         </header>
     );

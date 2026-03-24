@@ -181,7 +181,7 @@ export default function Home() {
 
                 {/* Ad Banner 1 */}
                 <div className="container">
-                    <AdBanner slot="Ad1" />
+                    <AdBanner slot="9029253338" />
                 </div>
 
                 {/* Calendar Section */}
@@ -312,7 +312,7 @@ export default function Home() {
                 </section>
                 {/* Ad Banner 2 */}
                 <div className="container">
-                    <AdBanner slot="Ad2" />
+                    <AdBanner slot="5002378411" />
                 </div>
             </main>
             <Footer />

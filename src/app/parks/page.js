@@ -110,14 +110,14 @@ export default async function Parks() {
                 <ParksClient cities={CITIES} />
 
                 {/* Ad Banner 1 */}
-                <div className="container"><AdBanner slot="Ad1" /></div>
+                <div className="container"><AdBanner slot="9029253338" /></div>
 
                 <div className="container">
                     <ThemeParks parks={themeParks} />
                 </div>
 
                 {/* Ad Banner 2 */}
-                <div className="container"><AdBanner slot="Ad2" /></div>
+                <div className="container"><AdBanner slot="5002378411" /></div>
             </main>
             <Footer />
         </>

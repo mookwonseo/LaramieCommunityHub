@@ -90,7 +90,7 @@ export default async function Forum({ searchParams }) {
 
                 <div className="container">
                     {/* Ad Banner 1 */}
-                    <AdBanner slot="Ad1" />
+                    <AdBanner slot="9029253338" />
 
                     {/* Category filter */}
                     <div className={styles.filterBar}>
@@ -131,7 +131,7 @@ export default async function Forum({ searchParams }) {
                     </div>
 
                     {/* Ad Banner 2 */}
-                    <AdBanner slot="Ad2" />
+                    <AdBanner slot="5002378411" />
                 </div>
             </main>
             <Footer />

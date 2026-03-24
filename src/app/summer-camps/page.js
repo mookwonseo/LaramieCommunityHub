@@ -64,7 +64,7 @@ export default function SummerCamps() {
 
                 <div className="container">
                     {/* Ad Banner 1 */}
-                    <AdBanner slot="Ad1" />
+                    <AdBanner slot="9029253338" />
                     <div className={styles.campGrid}>
                         {camps.map(camp => (
                             <div key={camp.name} className={styles.campCard}>
@@ -128,7 +128,7 @@ export default function SummerCamps() {
                         ))}
                     </div>
                     {/* Ad Banner 2 */}
-                    <AdBanner slot="Ad2" />
+                    <AdBanner slot="5002378411" />
                 </div>
             </main>
             <Footer />

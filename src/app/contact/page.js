@@ -21,11 +21,11 @@ export default function ContactPage() {
     return (
         <>
             <div className="container" style={{ marginTop: '20px' }}>
-                <AdBanner slot="Ad1" />
+                <AdBanner slot="9029253338" />
             </div>
             <ContactClient />
             <div className="container" style={{ marginBottom: '20px' }}>
-                <AdBanner slot="Ad2" />
+                <AdBanner slot="5002378411" />
             </div>
         </>
     );

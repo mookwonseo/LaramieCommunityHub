@@ -7,12 +7,17 @@
     padding: var(--spacing-sm) 0;
 }
 
-.headerContent {
+.topBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: var(--spacing-sm);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
     gap: var(--spacing-md);
-    position: relative;
 }
 
 .logo {
@@ -41,18 +46,21 @@
 }
 
 .nav {
+    border-top: 1px solid #efefef;
+    padding-top: var(--spacing-sm);
+}
+
+.navInner {
     display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: nowrap;
-    align-items: center;
-    overflow: hidden;
+    justify-content: center;
+    gap: var(--spacing-md);
 }
 
 .navLink {
-    font-size: 0.88rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: var(--color-text);
-    padding: var(--spacing-xs) 8px;
+    padding: var(--spacing-xs) 12px;
     border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
     white-space: nowrap;
@@ -120,11 +128,22 @@
         font-size: 1.4rem;
     }
     .logoImg {
-        height: 40px;
+        height: 48px;
+    }
+    .navInner {
+        gap: var(--spacing-sm);
+    }
+    .navLink {
+        font-size: 0.85rem;
+        padding: 6px 8px;
     }
 }
 
 @media (max-width: 900px) {
+    .topBar {
+        padding-bottom: 0;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -136,15 +155,22 @@
         width: 300px;
         height: 100vh;
         background: white;
+        border-top: none;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         transition: right 0.3s ease-in-out;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         padding: 80px var(--spacing-md) var(--spacing-xl);
-        gap: var(--spacing-md);
         z-index: 1000;
         overflow-y: auto;
+    }
+
+    .navInner {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: var(--spacing-md);
     }
 
     .navOpen {
@@ -159,12 +185,8 @@
     }
 
     .donateBtn {
-        position: relative;
-        z-index: 10;
-        margin-left: auto;
-        margin-right: 15px;
-        padding: 6px 14px;
         font-size: 0.85rem;
+        padding: 6px 14px;
     }
 }
 
@@ -172,7 +194,6 @@
     .logoText {
         display: none;
     }
-    
     .nav {
         width: 100%;
     }
