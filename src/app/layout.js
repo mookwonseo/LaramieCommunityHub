@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
     metadataBase: new URL('https://laramiecommunityhub.com'),
@@ -43,7 +44,10 @@ export default function RootLayout({ children }) {
                     crossOrigin="anonymous"
                 />
             </head>
-            <body>{children}</body>
+            <body>
+                {children}
+                <Analytics />
+            </body>
         </html>
     )
 }
