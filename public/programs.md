@@ -27,7 +27,8 @@ description:
 
 ### Adventure Kids
 phone: (307) 721-5262
-email: parksandrecinfo@cityoflaramie.org
+contact: Kahler Dawson
+email: kdawson@cityoflaramie.org
 location: Laramie Rec Center, 920 Boulder Dr, Laramie, WY 82070
 hours: Monday–Friday, 3:00–5:30 PM (all ACSD #1 school days)
 website: https://www.cityoflaramie.org/1079/Adventure-Kids
@@ -46,7 +47,7 @@ description:
 
 ### Laramie Montessori School
 logo: /logos/laramie-montessori.png
-phone: (307) 742-9964
+phone: (307) 742-2227
 email: jill@BBBSWYO.org
 contact: Jill Dalgarno (K–6) · Christine (PreK)
 location: 608 S 4th St, Laramie, WY 82070

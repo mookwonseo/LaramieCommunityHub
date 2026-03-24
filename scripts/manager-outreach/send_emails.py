@@ -1,24 +1,34 @@
 import smtplib
 import csv
 import ssl
+import time
 from email.message import EmailMessage
 
 # --- CONFIGURATION ---
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
 SENDER_EMAIL = "ko.laramie83@gmail.com"
-SENDER_PASSWORD = "your-app-password"  # Use a Google App Password, not your real password!
+SENDER_PASSWORD = "adui mqcr habj gpzl"  # Replace with your 16-character Google App Password
 
 # --- EMAIL CONTENT ---
-SUBJECT = "Update for Laramie Community Hub"
+# Use placeholders like {recipient_name}, {program}, and {phone}
+SUBJECT_TEMPLATE = "Quick update: Laramie Community Hub and {program} listing"
 BODY_TEMPLATE = """Hi {recipient_name},
 
-I am writing to you regarding the {program} program listed on the Laramie Community Hub. We are currently updating our listings for 2026. 
+I hope you’re having a great week!
 
-Please let us know if there are any changes to your information (currently listed with phone: {phone}) or if you have new sessions starting soon.
+I’m writing to let you know that I’ve recently updated my website, www.LaramieCommunityHub.com, to be much more user-friendly and visually appealing. 
+
+I’m also currently working on a new schedule tab to make the calendar even easier for parents to navigate across all programs—please stay tuned for that!
+
+If you’d like to update your program’s picture or any specific information (currently listed with phone: {phone}), please feel free to email me directly. Also, if you have other programs you’d like to add to the site, let me know. I’m more than happy to include them.
 
 Best regards,
-Laramie Community Hub Team
+
+Mookwon Seo
+ko.laramie83@gmail.com
+www.laramiecommunityhub.com
+
 """
 
 def send_emails():
@@ -32,11 +42,11 @@ def send_emails():
                 reader = csv.DictReader(file)
                 for row in reader:
                     program = row['Program']
-                    manager = row['Manager']
-                    email = row['Email']
-                    phone = row['Phone'] if row['Phone'] else "N/A"
+                    manager = row['Manager'].strip()
+                    email = row['Email'].strip()
+                    phone = row['Phone'].strip() if row['Phone'] else "N/A"
                     
-                    # Use manager name if available, otherwise just "Manager"
+                    # Personalized name logic: Use manager name if available, else "Program Manager"
                     recipient_name = manager if manager else f"{program} Manager"
                     
                     msg = EmailMessage()
@@ -45,18 +55,26 @@ def send_emails():
                         program=program,
                         phone=phone
                     ))
-                    msg['Subject'] = SUBJECT
+                    
+                    msg['Subject'] = SUBJECT_TEMPLATE.format(program=program)
                     msg['From'] = SENDER_EMAIL
                     msg['To'] = email
                     
-                    print(f"Sending email to {recipient_name} for {program} ({email})...")
-                    # server.send_message(msg)  # UNCOMMENT THIS LINE TO ACTUALLY SEND
-                    print(f"Success!")
+                    print(f"Preparing individual email for: {recipient_name} ({email})")
+                    
+                    # --- ACTUAL SENDING ---
+                    server.send_message(msg)  # <-- UNCOMMENT THIS LINE TO ACTUALLY SEND
+                    
+                    print(f"Success! (Simulated)")
+                    
+                    # Optional: Add a small delay between emails to avoid spam filters
+                    # time.sleep(1) 
 
     except Exception as e:
         print(f"Error: {e}")
 
 if __name__ == "__main__":
     print(f"Email script initialized for {SENDER_EMAIL}.")
-    print("IMPORTANT: You must set your SENDER_PASSWORD (Google App Password) in the script file.")
+    print("STATUS: Individual sending mode active.")
+    print("IMPORTANT: Uncomment 'server.send_message(msg)' in the script to start sending.")
     send_emails()
