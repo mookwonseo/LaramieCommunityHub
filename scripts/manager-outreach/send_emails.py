@@ -21,7 +21,11 @@ I’m writing to let you know that I’ve recently updated my website, www.Laram
 
 I’m also currently working on a new schedule tab to make the calendar even easier for parents to navigate across all programs—please stay tuned for that!
 
-If you’d like to update your program’s picture or any specific information (currently listed with phone: {phone}), please feel free to email me directly. Also, if you have other programs you’d like to add to the site, let me know. I’m more than happy to include them.
+If you’d like to update your program’s picture or any specific information (currently listed with phone: {phone}), please feel free to email me directly. 
+
+Also, if you have other programs you’d like to add to the site, let me know. 
+
+I’m more than happy to include them.
 
 Best regards,
 
