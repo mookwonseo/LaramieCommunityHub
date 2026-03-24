@@ -1,11 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import styles from './Footer.module.css';
-import DonateModal from './DonateModal';
 
 export default function Footer() {
-    const [isDonateOpen, setIsDonateOpen] = useState(false);
 
     return (
         <footer className={styles.footer}>
@@ -37,20 +34,21 @@ export default function Footer() {
                     <div className={styles.footerSection}>
                         <h4>Support the Hub</h4>
                         <p className={styles.supportText}>Help us keep the Hub running and free for all families.</p>
-                        <button 
-                            onClick={() => setIsDonateOpen(true)}
+                        <a 
+                            href="https://paypal.me/mookwonseo"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={styles.donateBtnFooter}
                             aria-label="Donate with PayPal"
                         >
                             Donate with PayPal
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div className={styles.footerBottom}>
-                    <p>&copy; {new Date().getFullYear()} Laramie Community Hub. All rights reserved.</p>
+                  <p>&copy; {new Date().getFullYear()} Laramie Community Hub. All rights reserved.</p>
                 </div>
             </div>
-            <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
         </footer>
     );
 }

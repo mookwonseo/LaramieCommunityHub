@@ -164,6 +164,14 @@ description:
 - Youth basketball program focused on building confidence, character, and athletic skills for all levels
 - Empowering young athletes on and off the court in the Laramie community
 
+### Laramie Floorball Club
+contact: Josh Hurt (josh.hurtsar@gmail.com)
+website: https://www.facebook.com/groups/466494880760629
+description:
+- A growing community focused on regular drop-in Floorball nights in Laramie
+- Floorball is a fast-paced, safe, and fun indoor hockey-style sport played with lightweight sticks and a plastic ball
+- Open to all skill levels; join for fitness, fun, and friendly competition
+
 ### Taekwondo
 phone: (307) 742-6767
 location: 170 N 2nd Street, Suite C Laramie, WY 82072

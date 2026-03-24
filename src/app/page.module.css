@@ -295,3 +295,27 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 480px) {
+    .hero {
+        padding: var(--spacing-xl) 0;
+        min-height: auto;
+    }
+
+    .heroSubtitle {
+        font-size: 1.1rem;
+    }
+
+    .mealBannerInner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mealBannerText {
+        flex-direction: column;
+    }
+
+    .mealBannerBtn {
+        width: 100%;
+    }
+}

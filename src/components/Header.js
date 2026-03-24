@@ -3,12 +3,11 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
-import DonateModal from './DonateModal';
 import { useState } from 'react';
 
 export default function Header() {
     const pathname = usePathname();
-    const [isDonateOpen, setIsDonateOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navItems = [
         { name: 'Home', path: '/' },
@@ -21,35 +20,54 @@ export default function Header() {
         { name: 'Contact', path: '/contact' },
     ];
 
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
+
     return (
         <header className={styles.header}>
             <div className="container">
                 <div className={styles.headerContent}>
-                    <Link href="/" className={styles.logo}>
+                    <Link href="/" className={styles.logo} onClick={closeMenu}>
                         <img src="/images/logo.png" alt="Laramie Community Hub" className={styles.logoImg} />
-                        Laramie Community Hub
+                        <span className={styles.logoText}>Laramie Community Hub</span>
                     </Link>
-                    <nav className={styles.nav}>
+
+                    <button 
+                        className={styles.hamburger} 
+                        onClick={toggleMenu}
+                        aria-label="Toggle Menu"
+                        aria-expanded={isMenuOpen}
+                    >
+                        <span className={`${styles.bar} ${isMenuOpen ? styles.bar1 : ''}`}></span>
+                        <span className={`${styles.bar} ${isMenuOpen ? styles.bar2 : ''}`}></span>
+                        <span className={`${styles.bar} ${isMenuOpen ? styles.bar3 : ''}`}></span>
+                    </button>
+
+                    <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
                         {navItems.map((item) => (
                             <Link
                                 key={item.path}
                                 href={item.path}
                                 className={`${styles.navLink} ${pathname === item.path ? styles.active : ''}`}
+                                onClick={closeMenu}
                             >
                                 {item.name}
                             </Link>
                         ))}
-                        <button 
-                            onClick={() => setIsDonateOpen(true)}
-                            className={styles.donateBtn}
-                            aria-label="Donate"
-                        >
-                            Donate
-                        </button>
                     </nav>
+
+                    <a 
+                        href="https://paypal.me/mookwonseo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.donateBtn}
+                        aria-label="Donate"
+                        onClick={closeMenu}
+                    >
+                        Donate
+                    </a>
                 </div>
             </div>
-            <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
         </header>
     );
 }

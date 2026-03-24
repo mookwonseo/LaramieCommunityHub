@@ -36,7 +36,7 @@ description: Pool parties, gym parties, ice skating, and roller skating — plen
 ### All Points West
 phone: (307) 460-3966
 email: info@allpointswestwyo.com
-website: https://square.site/book/LA2333GS4PYAC/all-points-west-laramie-wy
+website: https://www.allpointswestwyo.com/
 location: 1575 N 4th St. #107, Laramie, WY 82072
 emoji: 🕹️
 description: Virtual reality, arcade, and escape room fun — party space available anytime with reservation.

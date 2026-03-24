@@ -11,8 +11,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     gap: var(--spacing-md);
+    position: relative;
 }
 
 .logo {
@@ -34,6 +34,10 @@
 
 .logo:hover {
     color: var(--color-primary);
+}
+
+.logoText {
+    display: block;
 }
 
 .nav {
@@ -63,6 +67,7 @@
 }
 
 .donateBtn {
+    display: inline-block;
     background: linear-gradient(135deg, #0070ba, #003087);
     color: white !important;
     padding: var(--spacing-xs) var(--spacing-md);
@@ -82,18 +87,91 @@
     color: white !important;
 }
 
-@media (max-width: 768px) {
-    .headerContent {
-        flex-direction: column;
-        text-align: center;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-text);
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.bar1 { transform: translateY(8px) rotate(45deg); }
+.bar2 { opacity: 0; }
+.bar3 { transform: translateY(-8px) rotate(-45deg); }
+
+@media (max-width: 1024px) {
+    .logoText {
+        font-size: 1.4rem;
+    }
+    .logoImg {
+        height: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
     }
 
     .nav {
-        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        padding: 80px var(--spacing-md) var(--spacing-xl);
+        gap: var(--spacing-md);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .navOpen {
+        right: 0;
     }
 
     .navLink {
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-sm);
+    }
+
+    .donateBtn {
+        position: relative;
+        z-index: 10;
+        margin-left: auto;
+        margin-right: 15px;
+        padding: 6px 14px;
         font-size: 0.85rem;
-        padding: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .logoText {
+        display: none;
+    }
+    
+    .nav {
+        width: 100%;
     }
 }

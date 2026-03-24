@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import styles from './UpdateNote.module.css';
 
 // ← Change this date whenever you update the site
-const LAST_UPDATED = 'March 20, 2026';
-const NOTE_TEXT = 'Schedule, program info, and summer camps updated.';
+const LAST_UPDATED = 'March 24, 2026';
+const NOTE_TEXT = 'Updated programs and birthday party information.';
 
 export default function UpdateNote() {
     const [visible, setVisible] = useState(false);

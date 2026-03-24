@@ -70,3 +70,17 @@
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
 }
+
+@media (max-width: 480px) {
+    .footer {
+        padding: var(--spacing-xl) 0 var(--spacing-md);
+    }
+    
+    .footerContent {
+        gap: var(--spacing-lg);
+    }
+    
+    .footerSection h3 {
+        font-size: 1.5rem;
+    }
+}
