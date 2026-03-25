@@ -1,0 +1,178 @@
+{
+  "name": "Mookwon Seo, PhD",
+  "linkedin": {
+    "label": "linkedin.com/in/mookwonseo/",
+    "url": "https://www.linkedin.com/in/mookwonseo/"
+  },
+  "summary": "Results-driven Embedded Software Engineer with a PhD in Mathematics, 8+ years of experience developing real-time embedded control systems, motor control algorithms, and firmware for hardware interfaces. Expertise in C/C++, bare-metal programming, and PCB design, with a proven record of optimizing performance and enhancing reliability in embedded applications.",
+  "sections": [
+    {
+      "title": "TECHNICAL SKILLS",
+      "type": "skills",
+      "items": [
+        { "label": "Programming Languages", "value": "Python, SQL, Julia, C/C++, C#.NET WPF, CUDA, MATLAB" },
+        { "label": "Embedded Tools", "value": "IAR Embedded Workbench, STM32, ARM Cortex, Bare-metal firmware" },
+        { "label": "Hardware", "value": "PCB Design (Altium Designer), Microcontrollers, Motor Controllers, Sensors" },
+        { "label": "Protocols", "value": "UARTS, I2C, SPI, RS232" },
+        { "label": "Simulation Tools", "value": "OpenFAST, OWENS, Matlab/Simulink" },
+        { "label": "Modeling & Optimization", "value": "Mathematical Modeling, Optimization, Sequential Quadratic Programming (SQP), Parallel computing (GPU, multi-threading), Machine Learning, Scikit-Learn" },
+        { "label": "Physics Simulation", "value": "Rigid body dynamics, 6 DOF simulation, Aerodynamics simulation, Fluid simulation" },
+        { "label": "Cloud Service", "value": "Azure, Git" }
+      ]
+    },
+    {
+      "title": "EXPERIENCE",
+      "type": "experience",
+      "items": [
+        {
+          "company": "Airloom Energy",
+          "date": "2016 – Present",
+          "description": "Modeling and simulation, data acquisition, and reconciliation for an innovative wind energy system; electronics design, PCB creation, and control logic development via bare-metal firmware.",
+          "roles": [
+            {
+              "title": "SOFTWARE ENGINEER | DATA SCIENTIST (2022 – Present)",
+              "bullets": [
+                "Conducted structural fatigue and deformation analysis for turbine components, optimizing design performance using OpenFAST and OWENS simulation tools.",
+                "Designed high-performance algorithms for real-time physical simulations, ensuring industry-standard accuracy and computational efficiency.",
+                "Built and managed scalable data pipelines for 4+ TB of wind data using HDF5, streamlining storage and retrieval for large-scale analysis."
+              ]
+            },
+            {
+              "title": "EMBEDDED SOFTWARE ENGINEER (2018 – 2022)",
+              "bullets": [
+                "Developed real-time motor control algorithms with Simulink and IAR Workbench, achieving a 20% increase in efficiency and 15% reduction in power consumption.",
+                "Engineered and debugged bare-metal firmware for ARM Cortex-based microcontrollers, ensuring high reliability for sensor integration and motor communication.",
+                "Performed deep-dive analysis of motor phase and sensor data, identifying key operational patterns that drove a 15% increase in system performance."
+              ]
+            },
+            {
+              "title": "MODELING AND SIMULATION ENGINEER (2016 – 2018)",
+              "bullets": [
+                "Developed a custom GPU-accelerated Sequential Quadratic Programming (SQP) algorithm in C#, outperforming commercial tools like KNITRO through parallel processing.",
+                "Led the implementation of complex physical simulations incorporating hundreds of variables and constraints to maximize power output while minimizing costs.",
+                "Applied advanced mathematical modeling principles to optimize large-scale system performance and computational efficiency."
+              ]
+            }
+          ]
+        },
+        {
+          "company": "University of Wyoming",
+          "date": "2012 – 2016",
+          "description": "Optimized a hydrology model for the Upper Colorado Basin using high-performance computing techniques, resulting in a 30% reduction in processing time.",
+          "roles": [
+            {
+              "title": "RESEARCH ASSISTANT",
+              "bullets": [
+                "Optimized a hydrology model for the Upper Colorado Basin using high-performance computing techniques, resulting in a 30% reduction in processing time.",
+                "Investigated and implemented advanced parallel processing algorithms to improve the scalability and efficiency of large-scale environmental models."
+              ]
+            }
+          ]
+        },
+        {
+          "company": "National Institute for Mathematical Sciences",
+          "date": "2010 – 2011",
+          "description": "Developed numerical schemes for hyperbolic equations in plasma physics and topology optimization for future internet protocols.",
+          "roles": [
+            {
+              "title": "PROJECT RESEARCHER",
+              "bullets": [
+                "Developed numerical schemes for hyperbolic equations in plasma physics and topology optimization for future internet protocols.",
+                "Presented research findings to peer experts, contributing to advancements in computational science and internet topologies."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "items": [
+        {
+          "institution": "University of Wyoming, Laramie, WY",
+          "date": "2016",
+          "degree": "PhD in Mathematics",
+          "details": "Dissertation: Alternative Models for Water Infiltration & Oil Reservoirs In-Ground"
+        },
+        {
+          "institution": "Kangwon National University, South Korea",
+          "date": "2009",
+          "degree": "BS in Mathematics"
+        }
+      ]
+    },
+    {
+      "title": "DATA SCIENCE CERTIFICATES",
+      "type": "list",
+      "items": [
+        "DATA ANALYSIS WITH PYTHON by IBM",
+        "DATABASES AND SQL FOR DATA SCIENCE WITH PYTHON by IBM",
+        "PYTHON PROJECT FOR DATA SCIENCE by IBM",
+        "DATA SCIENCE METHODOLOGY by IBM",
+        "INTRODUCTION TO ARTIFICIAL INTELLIGENCE WITH PYTHON by CS50",
+        "INTRODUCTION TO COMPUTER SCIENCE by CS50",
+        "OPENFAST CERTIFICATE by UNIVERSITY OF MASSACHUSETTS AMHERST"
+      ]
+    },
+    {
+      "title": "PUBLICATIONS",
+      "type": "list",
+      "items": [
+        "**OpenDBDDASToolkit: Secure Map Reduce and Hadoop-like Systems** (2015) - E. Fabiano, M. Seo, X. Wu, and C. C. Douglas",
+        "**The Soil Moisture Velocity Equation** (2017) - Fred L. Ogden, Myron B. Allen, Wencong Lai, Jianting Zhu, Mookwon Seo, C. C. Douglas, and Cary A. Talbot",
+        "**GPU Accelerated Sequential Quadratic Programming** (2017) - X. Hu, C. C. Douglas, R. Lumley, M. Seo",
+        "**Implementations and interpretations of the Talbot-Ogden infiltration model** (2014) - M. Seo, D. Cerwinsky, K. Gahalaut, C.C. Douglas"
+      ]
+    },
+    {
+      "title": "PROFESSIONAL DEVELOPMENT",
+      "type": "list",
+      "items": [
+        "2015: Twenty-first Industrial Mathematical and Statistical Modeling Workshop for Graduate Students",
+        "Estimation of bathymetry in environmental flow (2015: C. Copos, H. Ji, K. Palmowski, P. Sakkaplangkul, M. Seo, Y. Wang)",
+        "2018 Conference on Computer Vision and Pattern Recognition",
+        "2022 Certificate of completion of molding wind turbines with the FAST code Issued by UMassAmherst"
+      ]
+    },
+    {
+      "title": "HONORS AND AWARDS",
+      "type": "list",
+      "items": [
+        "2014 Virindra & Gail Sehgal Award and Catherine Gibbs Shaw Awards for Excellence in Mathematics (University of Wyoming)",
+        "2013 Summer Graduate Scholarship",
+        "2007-2008 Scholarship at Kangwon National University",
+        "2007-2008 Scholarship from a research project at Gangwon National University",
+        "2001-2003 BK21 (Brain Korea 21), National Research Fellowship (South Korea)"
+      ]
+    },
+    {
+      "title": "TALKS",
+      "type": "list",
+      "items": [
+        "2014 Very fast water infiltration methods, University of Wyoming Analysis and Computational Mathematics Seminar.",
+        "2015 A reliable and computationally efficient alternative to the one dimensional Richards equation for variably saturated flow in soils.",
+        "2016 An alternative solution of one dimensional Richards equation and its implementation."
+      ]
+    },
+    {
+      "title": "COURSES TAUGHT",
+      "type": "list",
+      "items": [
+        "2016 Summer: Calculus I",
+        "2016 Spring: Trigonometry",
+        "2015 Fall: Trigonometry",
+        "2013 Spring: College Algebra",
+        "2012 Fall: College Algebra"
+      ]
+    },
+    {
+      "title": "LANGUAGES",
+      "type": "list",
+      "items": [
+        "Korean (Native)",
+        "English (Fluent)"
+      ]
+    }
+  ]
+}

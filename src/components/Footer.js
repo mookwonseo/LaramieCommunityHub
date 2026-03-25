@@ -20,6 +20,7 @@ export default function Footer() {
                             <li><a href="/programs">Programs</a></li>
                             <li><a href="/schedule">Schedule</a></li>
                             <li><a href="/parks">Parks</a></li>
+                            <li><a href="/about-me">About Me</a></li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
