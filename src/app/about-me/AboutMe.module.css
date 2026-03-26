@@ -42,11 +42,145 @@
   margin-bottom: var(--spacing-xxl);
 }
 
+/* Summary Highlight */
+.summaryHighlight {
+  background: white;
+  padding: var(--spacing-xxl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--spacing-xxl);
+  border-left: 6px solid var(--color-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.summaryHighlight::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 8rem;
+  color: var(--color-primary);
+  opacity: 0.05;
+  font-family: serif;
+}
+
+.summaryText {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #1e293b;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+/* Portfolio / Featured Projects */
+.portfolioSection {
+  margin-top: var(--spacing-xxl);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.projectCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+}
+
+.projectCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.projectImageWrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+.projectContent {
+  padding: var(--spacing-xl);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectContent h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+}
+
+.projectContent p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: auto;
+}
+
+.tag {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #dbeafe;
+}
+
+/* Study Cards Section Title */
+.studyTitle {
+  font-size: 2rem;
+  color: #0f172a;
+  margin: var(--spacing-xxl) 0 var(--spacing-xl);
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
+}
+
 .studyGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
 }
 
 .studyCard {
@@ -72,6 +206,7 @@
   grid-template-columns: 1fr 300px;
   gap: var(--spacing-xl);
   align-items: start;
+  margin-bottom: var(--spacing-xl);
 }
 
 .introImageWrapper {
@@ -132,8 +267,78 @@
   margin-top: auto;
 }
 
+/* Professional Content & Markdown Rendering */
+.professionalContent {
+  background: white;
+  padding: var(--spacing-xxl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.markdownContent h2 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--spacing-xs);
+}
+
+.markdownContent h3 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.markdownContent p {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.markdownContent ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.markdownContent li {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+.markdownContent li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.markdownContent strong {
+  color: #0f172a;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .professionalContent {
+    padding: var(--spacing-lg);
   }
 }

@@ -7,6 +7,8 @@ import styles from './page.module.css'
 import fs from 'fs'
 import path from 'path'
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
     title: 'Find Youth Programs & Family Resources in Laramie, WY',
     description: "Discover Laramie's best afterschool programs, summer camps, parks, and family events — all in one place.",

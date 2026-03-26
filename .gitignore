@@ -4,6 +4,12 @@ out
 dist
 *.log
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
 *.pem
 .env.local
 .env.development.local

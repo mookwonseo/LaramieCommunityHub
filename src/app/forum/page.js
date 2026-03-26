@@ -6,6 +6,8 @@ import Footer from '@/components/Footer'
 import AdBanner from '@/components/AdBanner'
 import styles from './forum.module.css'
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
     title: 'Community Forum',
     description: 'Laramie school news, education updates, and community announcements from the Laramie Community Hub.',

@@ -6,6 +6,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import styles from '../forum.module.css'
 
+export const dynamic = 'force-dynamic';
+
 const POSTS_DIR = path.join(process.cwd(), 'public', 'forum', 'posts')
 
 const CAT_MAP = {
