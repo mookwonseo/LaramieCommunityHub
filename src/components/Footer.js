@@ -29,6 +29,7 @@ export default function Footer() {
                         <ul className={styles.footerLinks}>
                             <li><a href="https://www.acsd1.org" target="_blank" rel="noopener noreferrer">ACSD #1</a></li>
                             <li><a href="/events">Events</a></li>
+                            <li><a href="https://www.acplwy.org" target="_blank" rel="noopener noreferrer">ACPL</a></li>
                             <li><a href="/summer-camps">Summer Camps</a></li>
                         </ul>
                     </div>

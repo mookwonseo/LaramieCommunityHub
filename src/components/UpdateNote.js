@@ -4,7 +4,7 @@ import styles from './UpdateNote.module.css';
 
 // ← Change this date whenever you update the site
 const LAST_UPDATED = 'March 30, 2026';
-const NOTE_TEXT = 'Updated the Events tab — Removed past events and kept upcoming community activities.';
+const NOTE_TEXT = 'Updated the Events tab with the Week of the Young Child Fair and ACPL Garden Series!';
 
 export default function UpdateNote() {
     const [visible, setVisible] = useState(false);
