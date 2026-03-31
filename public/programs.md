@@ -158,6 +158,7 @@ description:
 - Open to all skill levels, including beginners new to hockey; spring league and seasonal registration available
 
 ### Laramie Fire Basketball
+logo: /logos/laramie-fireball.png
 contact: laramiefire@outlook.com
 website: https://www.facebook.com/p/Laramie-Fire-Youth-Basketball-100057039177068/
 start-date: April 1, 2026
