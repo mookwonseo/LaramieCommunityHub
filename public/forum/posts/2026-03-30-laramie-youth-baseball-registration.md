@@ -1,6 +1,6 @@
 ---
 title: Laramie Youth Baseball 2026 Registration Information
-date: 2026-03-26
+date: 2026-03-30
 category: Community
 author: Laramie Community Hub
 ---
