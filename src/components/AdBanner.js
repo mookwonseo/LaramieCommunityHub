@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './AdBanner.module.css';
 
 /**
@@ -9,13 +9,18 @@ import styles from './AdBanner.module.css';
  * If no slot is passed it shows a placeholder in development.
  */
 export default function AdBanner({ slot, style = {} }) {
+    const [hasHydrated, setHasHydrated] = useState(false);
+
     useEffect(() => {
+        setHasHydrated(true);
         try {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
         } catch (e) {
             // AdSense not loaded yet — safe to ignore
         }
     }, []);
+
+    if (!hasHydrated) return null;
 
     if (!slot) {
         // Dev placeholder so layout is visible without a real slot ID

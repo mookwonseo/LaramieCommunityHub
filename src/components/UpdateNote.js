@@ -3,13 +3,15 @@ import { useState, useEffect } from 'react';
 import styles from './UpdateNote.module.css';
 
 // ← Change this date whenever you update the site
-const LAST_UPDATED = 'April 3, 2026';
-const NOTE_TEXT = 'Updated the Events tab with the Kiwanis Club Easter Egg Hunt and new library programs!';
+const LAST_UPDATED = 'April 11, 2026';
+const NOTE_TEXT = 'Updated the Events calendar and added the North Hills Art Studio program and summer camp!';
 
 export default function UpdateNote() {
     const [visible, setVisible] = useState(false);
+    const [hasHydrated, setHasHydrated] = useState(false);
 
     useEffect(() => {
+        setHasHydrated(true);
         // Show once per session (hides if already dismissed this session)
         const dismissed = sessionStorage.getItem('updateNoteDismissed');
         if (!dismissed) setVisible(true);
@@ -20,7 +22,7 @@ export default function UpdateNote() {
         setVisible(false);
     }
 
-    if (!visible) return null;
+    if (!hasHydrated || !visible) return null;
 
     return (
         <div className={styles.note} role="status" aria-live="polite">

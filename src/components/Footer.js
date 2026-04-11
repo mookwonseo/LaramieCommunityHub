@@ -1,8 +1,14 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+    const [year, setYear] = useState(2026);
+
+    useEffect(() => {
+        setYear(new Date().getFullYear());
+    }, []);
 
     return (
         <footer className={styles.footer}>
@@ -48,7 +54,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={styles.footerBottom}>
-                  <p>&copy; {new Date().getFullYear()} Laramie Community Hub. All rights reserved.</p>
+                  <p>&copy; {year} Laramie Community Hub. All rights reserved.</p>
                 </div>
             </div>
         </footer>

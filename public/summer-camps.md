@@ -74,3 +74,20 @@ website: https://the-cooking-studio.com/kids-teens-cooking-classes/
 emoji: 👨‍🍳
 highlights:
 - Hands-on cooking and baking classes in a professional kitchen
+
+---
+
+### North Hills Art Studio Summer Art Camp
+dates: June 22–26 / July 13–17 / July 20–24
+hours: 9:00 AM – 12:00 PM
+location: Laramie Plains Civic Center, 710 E Garfield St, Laramie, WY
+ages: K–8th Grade
+image: /logos/summer_art_camp.png
+website: https://www.northhillsartstudio.com
+emoji: 🎨
+highlights:
+- Hands-on workshops in papermaking and cyanotypes
+- Exploration of painting and collage techniques
+- Led by instructor Elizabeth McFeely
+
+

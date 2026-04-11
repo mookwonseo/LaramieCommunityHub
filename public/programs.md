@@ -211,9 +211,23 @@ description:
 - Arts, music, dance, and yoga enrichment with emphasis on whole-child development
 - Mobile/onsite program travels to schools and events; drop-in childcare available
 
+### North Hills Art Studio
+phone: (970) 402-2271
+logo: /logos/north_hills_art_studio.png
+email: elizabethmcfeely73@gmail.com
+contact: Elizabeth McFeely
+location: Laramie Plains Civic Center, 710 E Garfield St, Laramie, WY
+website: https://www.northhillsartstudio.com
+description:
+- Group art lessons and mixed-media classes for K–8th grade students
+- Creative environment focusing on painting, collage, and unique art techniques
+- Year-round registration available for small group sessions
+
 ### Laramie Cello Academy
 logo: /logos/laramie-cello-academy.png
 website: https://www.facebook.com/LaramieCelloAcademy
 description:
 - Youth cello instruction and ensemble opportunities in the Laramie community
 - Connected to the UW annual Cello Festival (masterclasses, workshops, concerts)
+
+
