@@ -7,12 +7,6 @@ image: /events/images/flavor_festival.png
 description: A week-long celebration of international cuisine in Laramie. Visit participating downtown restaurants for special menus and flavors from around the world!
 website: https://laramiemainstreet.org/flavor
 
-## Kolby Cooper Live at Cowboy Saloon
-date: May 9, 2026
-location: The Cowboy Saloon & Dance Hall, 108 S 2nd St, Laramie, WY
-image: /events/images/kolby_cooper.png
-description: Catch Kolby Cooper live in concert in downtown Laramie! Doors open at 7:00 PM. 21+ event.
-website: https://www.eventbrite.com/e/kolby-cooper-at-the-cowboy-saloon-tickets
 
 ## Dance Studio B Presents: Snow White
 date: May 15, 2026
