@@ -9,8 +9,9 @@ dates: June 8 – August 21
 hours: 9:00 AM – 3:00 PM, Monday–Friday
 location: LEAP Ninja Warrior Gym, 4037 Grand Ave Suite C, Laramie, WY
 ages: 4–14
-website: https://www.leapwyo.com
+website: https://www.leapwyo.com/summer-camps
 emoji: 🥷
+logo: /logos/LeapLogoBluePlus.png
 image: /logos/Leap_SummerCamp.jpeg
 highlights:
 - Lunch included
@@ -25,6 +26,7 @@ hours: 7:00 AM – 5:30 PM, Monday–Friday
 location: Laramie Educational Afterschool Facility, 715 Shield St, Laramie, WY
 ages: 4–12
 emoji: 🌿
+logo: /logos/leaf.png
 image: /logos/leaf.png
 highlights:
 - Breakfast, lunch, and snack included
@@ -78,11 +80,12 @@ highlights:
 ---
 
 ### North Hills Art Studio Summer Art Camp
+logo: /logos/north_hills_art_studio.png
+image: /logos/summer_art_camp.png
 dates: June 22–26 / July 13–17 / July 20–24
 hours: 9:00 AM – 12:00 PM
 location: Laramie Plains Civic Center, 710 E Garfield St, Laramie, WY
 ages: K–8th Grade
-image: /logos/summer_art_camp.png
 website: https://www.northhillsartstudio.com
 emoji: 🎨
 highlights:
