@@ -141,13 +141,6 @@ export const birthdayVenues = [
 
 export const events = [
     {
-        id: 1,
-        title: 'Winter Lights Festival',
-        date: 'December 15, 2025',
-        description: 'Annual downtown celebration with light displays, caroling, and visits with Santa.',
-        location: 'Downtown Laramie',
-    },
-    {
         id: 2,
         title: 'Jubilee Days',
         date: 'July 2026',
@@ -162,6 +155,7 @@ export const events = [
         location: 'Laramie Fairgrounds',
     },
 ];
+
 
 export const summerCamps = [
     {

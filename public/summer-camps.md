@@ -93,4 +93,17 @@ highlights:
 - Exploration of painting and collage techniques
 - Led by instructor Elizabeth McFeely
 
+---
 
+### Mega Sports Camp
+dates: June 8–11
+hours: 9:00 AM – 12:00 PM (8:30 AM drop-off)
+location: Albany County Fairgrounds, 2858 County Fairgrounds Rd, Laramie, WY
+ages: K–5th Grade
+website: https://newlifelaramie.churchcenter.com/registrations/events/3579315
+emoji: ⚽
+image: /logos/mega_sports_camp.png
+highlights:
+- $5 registration fee (includes t-shirt)
+- Multi-sport clinic with soccer, basketball, baseball, and more
+- Character-building and fun activities
