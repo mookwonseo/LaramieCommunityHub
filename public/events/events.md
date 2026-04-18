@@ -19,7 +19,7 @@ date: Sundays through May 3, 2026
 location: Albany County Public Library, 310 S. 8th Street, Laramie, WY 82070
 image: /events/images/acpl_garden_series.png
 description: Join the library for a series of gardening workshops. Learn about pest control, planting, and more to get your garden ready for the season. 
-website: https://www.visitlaramie.org/event/acpl-garden-series/38806/
+website: https://www.acplwy.org/
 
 ## Dance Studio B Presents: Snow White
 date: May 15, 2026
